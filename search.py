@@ -13,6 +13,7 @@ def get_homepage():
 def get_results_page():
     q = request.args.get('search')
     tweets = search(q, 10)
+
     return render_template("results.html", tweets = tweets)
 
 

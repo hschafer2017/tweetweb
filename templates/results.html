@@ -37,16 +37,9 @@
     <h1>Top 10 Tweets on ......</h1>
     <div id="tweets">
         <ul>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis blanditiis ut autem, nemo voluptatibus.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis blanditiis ut autem, nemo voluptatibus.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis blanditiis ut autem, nemo voluptatibus.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis blanditiis ut autem, nemo voluptatibus.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis blanditiis ut autem, nemo voluptatibus.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis blanditiis ut autem, nemo voluptatibus.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis blanditiis ut autem, nemo voluptatibus.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis blanditiis ut autem, nemo voluptatibus.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis blanditiis ut autem, nemo voluptatibus.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis blanditiis ut autem, nemo voluptatibus.</li>
+            {% for tweet in tweets %}
+            <li><a href="https://twitter.com/statuses/{{ tweet.id }}">{{ tweet.text }}</a></li>
+            {% endfor %}
         </ul>
     </div>
 </body>
