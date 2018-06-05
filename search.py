@@ -6,13 +6,11 @@ from tweepy.streaming import StreamListener
 from auth import get_auth
 from pymongo import MongoClient
 import json
-import json
 import tweepy
 from tweepy import OAuthHandler
 
-
-MONGODB_URI = ""
-MONGODB_NAME = ""
+MONGODB_URI = os.environ.get('MONGODB_URI')
+MONGODB_NAME = os.environ.get('MONGODB_NAME')
 
 app = Flask(__name__)
 
@@ -25,8 +23,7 @@ def get_results_page():
     q = request.args.get('search')
     tweets = search(q, 10)
     
-#Insert to Mongo
-
+#Mongo Database
     class MyStreamListener(StreamListener):
         # Class that Tweepy has built, has collects all functionality of tweets
     
