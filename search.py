@@ -1,4 +1,5 @@
 import os
+from tweets import search
 from flask import Flask, redirect, render_template, request
 
 
@@ -10,10 +11,9 @@ def get_homepage():
 
 @app.route('/new_search')
 def get_results_page():
-    tweets = [{
-        'text': 'Tweet', 
-        'id': '1234'
-    }]
+    q = request.args.get('search')
+    tweets = search(q, 10)
+
     return render_template("results.html", tweets = tweets)
 
 
