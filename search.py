@@ -10,7 +10,11 @@ def get_homepage():
 
 @app.route('/new_search')
 def get_results_page():
-   return render_template("results.html")
+    tweets = [{
+        'text': 'Tweet', 
+        'id': '1234'
+    }]
+    return render_template("results.html", tweets = tweets)
 
 
 if __name__ == '__main__':
